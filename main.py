@@ -29,12 +29,7 @@ class popupWindow(object):
 
     def cleanup(self):
         self.value = self.e.get()
-        f = open('pass.txt', 'r')
-        line = f.readline()
-        access = ''
-
-        for x in line:
-            access += chr(ord(x) + 5)
+        access = 'tim'
 
         if self.value == access:
             self.loop = True
@@ -171,7 +166,7 @@ def onsubmit():
     messagebox.showinfo('Added Entity', 'Successfully Added, \n' + 'Name: ' + n + '\nEmail: ' + m + '\nPassword: ' + p)
     readfile()
 
-    
+
 def clearfile():
     f = open('emails.txt', "w")
     f.close()
