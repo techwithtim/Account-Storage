@@ -2,8 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter.messagebox
 
-
-# ****** GLOBAL VARIABLES ******
+''' ******DECLARING AND INITIALIZING GLOBAL VARIABLES ******  '''
 
 objects = []
 window = Tk()
@@ -11,7 +10,6 @@ window.withdraw()
 window.title('Email Storage')
 
 class popupWindow(object):
-
     loop = False
     attempts = 0
 
@@ -123,7 +121,7 @@ class entity_display:
         self.deleteButton.grid(row=6 + self.i, column=3, sticky=E)
 
     def delete(self):
-        answer = tkinter.messagebox.askquestion('Delete', 'Are you sure you want to delete this entry?')
+        answer = tkinter.messagebox.askquestion('Delete', 'Are you sure you want to delete this entry?. [This action is irreversible]')
 
         if answer == 'yes':
             for i in objects:
@@ -218,5 +216,5 @@ email_label2.grid(row=5, column=1)
 pass_label2.grid(row=5, column=2)
 
 readfile()
-
-window.mainloop()
+if __name__ == "__main__":
+    window.mainloop()
